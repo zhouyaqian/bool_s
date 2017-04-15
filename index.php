@@ -6,6 +6,8 @@
  * Time: 21:38
  */
 
-include('include/init.php');
-$conf = config::getIns();
-print_r($conf);
+include('./include/init.php');
+/*$conf = config::getIns();
+print_r($conf);*/
+
+log::write('日志');

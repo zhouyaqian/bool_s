@@ -10,6 +10,8 @@ define('DEBUG',TRUE);
 define('ROOT',str_replace('\\','/',dirname(dirname(__FILE__))).'/');
 
 include(ROOT.'include/config.class.php');
+include(ROOT.'include/log.class.php');
+
 if(DEBUG){
     error_reporting(E_ALL);
 }else{
