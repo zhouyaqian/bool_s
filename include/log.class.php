@@ -19,7 +19,7 @@ class log
     }
 
     public static function bak($log){
-        $bak = ROOT.'data/log/'.data('ymd').mt_rand(1000,9999).'.bak.log';
+        $bak = ROOT.'data/log/'.date('ymd').mt_rand(1000,9999).'.log.bak';
         return rename($log,$bak);
     }
 
@@ -32,7 +32,7 @@ class log
 
         //判断日志文件是否已经超过1M，如果超过这个大小，则将之前的日志文件备份
         $size = filesize($log);
-        if($size < 1024*1024){
+        if($size < 1024){
             return $log;
         }
 
