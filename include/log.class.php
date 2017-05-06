@@ -12,7 +12,9 @@ class log
 
     public static function write($content){
         $log = self::isBak();
-        $content .= "\r\n";
+        $con = date("Y-m-d H:i:s").":";
+        $con .= "\r\n";
+        $content = $con.$content;
         $fh = fopen($log,'ab');
         fwrite($fh,$content);
         fclose($fh);
@@ -31,8 +33,9 @@ class log
         }
 
         //判断日志文件是否已经超过1M，如果超过这个大小，则将之前的日志文件备份
+        clearstatcache();//清楚文件缓存状态
         $size = filesize($log);
-        if($size < 1024){
+        if($size < 1024*1024){
             return $log;
         }
 

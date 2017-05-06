@@ -11,3 +11,4 @@ $_CFG = array();
 $_CFG['host'] = 'localhost';
 $_CFG['user'] = 'root';
 $_CFG['password'] = '123456';
+$_CFG['db'] = 'test';
